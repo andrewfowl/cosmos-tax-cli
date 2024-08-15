@@ -14,7 +14,7 @@ services:
     stop_grace_period: 1m
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      # - postgres:/var/lib/postgresql/data
+      - postgres:/var/lib/postgresql/data
     environment:
       - POSTGRES_USER=taxuser
       - POSTGRES_PASSWORD=password
@@ -37,7 +37,7 @@ services:
     user: defiant
     stop_grace_period: 10s
     volumes:
-      # - indexer:/var/lib/cosmos-tax-cli-index
+      - indexer:/var/lib/cosmos-tax-cli-index
       - /etc/localtime:/etc/localtime:ro
     depends_on:
       postgres:
